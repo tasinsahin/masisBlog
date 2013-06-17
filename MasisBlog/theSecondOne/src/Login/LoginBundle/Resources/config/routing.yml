@@ -1,0 +1,54 @@
+login_login_login:
+    pattern:  /login
+    defaults: { _controller: LoginLoginBundle:Default:login } 
+    
+login_login_signup:
+    pattern:  /signup
+    defaults: { _controller: LoginLoginBundle:Default:signup }
+    
+login_login_logout:
+    pattern:  /logout
+    defaults: { _controller: LoginLoginBundle:Default:logout }
+    
+login_login_homepage:
+    pattern:  /
+    defaults: { _controller: LoginLoginBundle:Page:index }
+    requirements:
+        _method:  GET|POST    
+
+login_login_new:
+  pattern: /new
+  defaults: {_controller: LoginLoginBundle:Blog:new } 
+ 
+login_login_list:
+  pattern: /list
+  defaults: {_controller: LoginLoginBundle:Blog:list } 
+  
+login_login_about:
+    pattern:  /about
+    defaults: { _controller: LoginLoginBundle:Page:about }
+    requirements:
+        _method:  GET
+        
+login_login_details:
+    pattern:  /details{blog_id}
+    defaults: { _controller: LoginLoginBundle:Page:Details }
+    requirements:
+        _method:  GET|POST
+    
+login_login_contact:
+    pattern:  /contact
+    defaults: { _controller: LoginLoginBundle:Page:contact }
+    requirements:
+        _method:  GET|POST
+        
+ 
+
+login_login_comment_new:
+    pattern:  /new/{blog_id}
+    defaults: { _controller: LoginLoginBundle:Comment:new }
+    requirements:
+        _method:  GET
+        blog_id: \d+
+
+ 

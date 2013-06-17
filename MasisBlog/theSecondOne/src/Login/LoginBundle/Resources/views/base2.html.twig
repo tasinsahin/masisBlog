@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>{% block title %}Masis Blog Admin Panel{% endblock %}</title>
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        {% block stylesheets %} 
+
+ 
+             <style type="text/css">
+                    /* Override some defaults */
+                    html, body {
+                        background-color: #eee;
+                    }
+                    body {
+                        padding-top: 40px; 
+                    }
+                    .container {
+                        width: 300px;
+                    }
+
+                    /* The white background content wrapper */
+                    .container > .content {
+                        background-color: #fff;
+                        padding: 20px;
+                        margin: 0 -20px; 
+                        -webkit-border-radius: 10px 10px 10px 10px;
+                        -moz-border-radius: 10px 10px 10px 10px;
+                        border-radius: 10px 10px 10px 10px;
+                        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                        -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                        box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                    }
+
+                    .login-form {
+                        margin-left: 65px;
+                    }
+
+                    legend {
+                        margin-right: -50px;
+                        font-weight: bold;
+                        color: #404040;
+                    }
+                    ul {
+                        padding-bottom: 50px;
+                        padding-left: 200px;
+                    }    
+                    li {
+                        float:left !important;
+                        width: 92px;
+                        border: 1px;
+                        border-style: solid;
+                        background-color: white;
+                    }    
+                </style>
+ 
+         {% endblock %}
+                                <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+                                </head>
+                                <body>
+
+                                <section id="wrapper">
+                                    <header id="header">
+                                        <div class="top">   
+                                            <hgroup>
+                                                <h2 style="display: block;padding-left: 230px" >{% block blog_title %}<a href="{{ path('login_login_homepage') }}">Masis Blog Admin Panel</a>{% endblock %}</h2>
+                                            </hgroup>
+                    {% block navigation %}  
+                                            <nav style="display: block;padding-left: 230px">
+                                                <ul class="nav nav-tabs"> 
+                                                    <li class="active"> <a href="{{path('login_login_list')}}">ContactList</a></li>
+                                                    <li class="active"> <a href="{{path('login_login_new')}}">Create Blog</a></li> 
+                                                    <li class="active"> <a href="{{path('login_login_logout')}}">Log out</a></li>
+                                                </ul>  
+                    {% endblock %}
+                                        </div>
+
+
+                                    </header>
+
+                                    <section class="main-col">
+                {% block body %}{% endblock %}
+                                        </section>
+                                        <aside class="sidebar">
+                {% block sidebar %}{% endblock %}
+                                            </aside>
+
+                                            <div id="footer">
+                {% block footer %}<div style="padding-left: 245px;">
+                                                    Symfony2 blog - created by <a href="{{asset('https://github.com/tasinsahin')}}">tasinsahin</a></div>
+                {% endblock %}
+                                                </div>
+                                            </section>
+
+        {% block javascripts %}{% endblock %}
+                                            </body>
+                                            </html>

@@ -1,0 +1,67 @@
+{% extends 'LoginLoginBundle::base2.html.twig' %}
+
+        {%block stylesheets %} 
+<link href="{{asset('bundles/loginlogin/css/bootstrap.css')}}" rel="stylesheet">
+
+    <link href="{{asset('bundles/loginlogin/css/bootstrap-responsive.css')}}" rel="stylesheet">
+        <style type="text/css">
+                /* Override some defaults */
+                html, body {
+                    background-color: #eee;
+                }
+                body {
+                    padding-top: 40px; 
+                }
+                .container {
+                    width: 300px;
+                }
+
+                /* The white background content wrapper */
+                .container > .content {
+                    background-color: #fff;
+                    padding: 20px;
+                    margin: 0 -20px; 
+                    -webkit-border-radius: 10px 10px 10px 10px;
+                    -moz-border-radius: 10px 10px 10px 10px;
+                    border-radius: 10px 10px 10px 10px;
+                    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                    box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                }
+
+                .login-form {
+                    margin-left: 65px;
+                }
+
+                legend {
+                    margin-right: -50px;
+                    font-weight: bold;
+                    color: #404040;
+                }
+
+            </style>
+
+{%endblock%}
+
+{% block title %}Contact{% endblock%}
+
+{% block body %}
+
+ {% for contact in contacts %}
+            <div class="container">
+                <div class="content">
+                    <article class="blog"> 
+                        <p>Posted by :<span class="highlight">{{ contact.username }}</span> </p>
+                        <p>E-mail    :<span class="highlight">{{ contact.email }}</span> </p>
+                        <p>Subject   :<span class="highlight">{{ contact.subject }}</span> </p>
+                        <p>Body      :<span class="highlight">{{ contact.body }}</span> </p>
+                    </article>
+                </div>
+            </div>
+            <div style="width: 10px"><br></div>
+    {% else %}
+                <p>There are no blog entries for symblog</p>
+    {% endfor %}
+
+
+{% endblock %}

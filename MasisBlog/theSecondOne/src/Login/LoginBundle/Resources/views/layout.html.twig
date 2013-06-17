@@ -1,0 +1,9 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}  
+        <link href="{{asset('bundles/loginlogin/css/blog.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block sidebar %}
+    {% render url('LoginLoginBundle_sidebar') %}
+{% endblock %}

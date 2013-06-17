@@ -1,0 +1,74 @@
+{% extends 'LoginLoginBundle::base2.html.twig' %}
+
+        {%block stylesheets %} 
+<link href="{{asset('bundles/loginlogin/css/bootstrap.css')}}" rel="stylesheet">
+
+    <link href="{{asset('bundles/loginlogin/css/bootstrap-responsive.css')}}" rel="stylesheet">
+        <style type="text/css">
+                /* Override some defaults */
+                html, body {
+                    background-color: #eee;
+                }
+                body {
+                    padding-top: 40px; 
+                }
+                .container {
+                    width: 600px;
+                }
+
+                /* The white background content wrapper */
+                .container > .content {
+                    background-color: #fff;
+                    padding: 20px;
+                    margin: 0 -20px; 
+                    -webkit-border-radius: 10px 10px 10px 10px;
+                    -moz-border-radius: 10px 10px 10px 10px;
+                    border-radius: 10px 10px 10px 10px;
+                    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                    box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                }
+
+                .login-form {
+                    margin-left: 65px;
+                }
+
+                legend {
+                    margin-right: -50px;
+                    font-weight: bold;
+                    color: #404040;
+                }
+
+            </style>
+
+{%endblock%}
+
+{% block title %}Contact{% endblock%}
+
+{% block body %}
+
+
+
+{%block container %}
+            <div class="container">
+                <div class="content">
+                    <div class="row">
+                        <div class="login-form">
+                            <h5>Hello Admin</h5>
+                            <h2>Create Blog</h2>
+                            <form action="{{path('login_login_new')}}" method="POST">
+                                <fieldset>
+                                    <div class="clearfix">
+                                        <input type="text" name="title" placeholder="title" style="width:560px">
+                                    </div> 
+                                    <div class="clearfix">
+                                        <textarea class="span6" name="blog" rows="3" placeholder="What's up?" required></textarea>                                    </div> 
+                                    <button class="btn primary" type="submit">Submit</button>  
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- /container --> 
+{% endblock %}
+{% endblock %}

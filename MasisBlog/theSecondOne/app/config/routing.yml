@@ -1,0 +1,5 @@
+ 
+login_login:
+    resource: "@LoginLoginBundle/Resources/config/routing.yml"
+    prefix:   /
+
